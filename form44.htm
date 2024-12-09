@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form44</title>
-</head>
-<body>
+  </head>
+  <body>
     <form id="myForm">
-        <select id="selectBox">
-            <option value="Item 0">Index 0</option>
-            <option value="Item 1">Index 1</option>
-            <option value="Item 2">Index 2</option>
-            <option value="Item 3">Index 3</option>
-        </select>
+      <select id="selectBox">
+        <option value="Item 0">Index 0</option>
+        <option value="Item 1">Index 1</option>
+        <option value="Item 2">Index 2</option>
+        <option value="Item 3">Index 3</option>
+      </select>
 
-        <input type="text" id="numberInput">
-        
-        <button type="button" onclick="selectItem()">Click here</button>
+      <input type="text" id="numberInput" />
+
+      <button type="button" onclick="selectItem()">Click here</button>
     </form>
 
     <script>
-        function selectItem() {
-            var selectBox = document.getElementById("selectBox");
-            var numberInput = document.getElementById("numberInput").value;
+      function selectItem() {
+        var selectBox = document.getElementById("selectBox");
+        var numberInput = document.getElementById("numberInput").value;
 
-            selectBox.selectedIndex = numberInput;
-        }
+        selectBox.selectedIndex = numberInput;
+      }
     </script>
-</body>
+  </body>
 </html>

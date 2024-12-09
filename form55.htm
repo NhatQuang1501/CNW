@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form55</title>
-</head>
-<body>
+  </head>
+  <body>
     <form>
-        <select id="selectBox">
-            <option value="Item 0">Index 0</option>
-            <option value="Item 1">Index 1</option>
-            <option value="Item 2">Index 2</option>
-            <option value="Item 3">Index 3</option>
-        </select>
+      <select id="selectBox">
+        <option value="Item 0">Index 0</option>
+        <option value="Item 1">Index 1</option>
+        <option value="Item 2">Index 2</option>
+        <option value="Item 3">Index 3</option>
+      </select>
 
-        <input type="text" id="indexInput" readonly>
+      <input type="text" id="indexInput" readonly />
 
-        <button type="button" onclick="displaySelectedIndex()">Click here</button>
+      <button type="button" onclick="displaySelectedIndex()">Click here</button>
     </form>
 
     <script>
-        function displaySelectedIndex() {
-            var selectBox = document.getElementById("selectBox");
-            var indexInput = document.getElementById("indexInput");
+      function displaySelectedIndex() {
+        var selectBox = document.getElementById("selectBox");
+        var indexInput = document.getElementById("indexInput");
 
-            var selectedIndex = selectBox.selectedIndex;
+        var selectedIndex = selectBox.selectedIndex;
 
-            indexInput.value = selectedIndex;
-        }
+        indexInput.value = selectedIndex;
+      }
     </script>
-</body>
+  </body>
 </html>

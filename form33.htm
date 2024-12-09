@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form33</title>
-</head>
-<body>
+  </head>
+  <body>
     <form name="myForm">
-        <table>
-            <tr>
-                <td>Text1</td>
-                <td><input type="text" id="text1" onblur="transformText();" onfocus="clearText();" /></td>
-            </tr>
-            <tr>
-                <td>Text2</td>
-                <td><input type="text" id="text2" readonly /></td>
-            </tr>
-        </table>
+      <table>
+        <tr>
+          <td>Text1</td>
+          <td>
+            <input
+              type="text"
+              id="text1"
+              onblur="transformText();"
+              onfocus="clearText();"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Text2</td>
+          <td><input type="text" id="text2" readonly /></td>
+        </tr>
+      </table>
     </form>
 
     <script>
-        function transformText() {
-            var text1Element = document.getElementById('text1');
-            var text2Element = document.getElementById('text2');
+      function transformText() {
+        var text1Element = document.getElementById("text1");
+        var text2Element = document.getElementById("text2");
 
-            var text1Value = text1Element.value;
-            var transformedText = '';
+        var text1Value = text1Element.value;
+        var transformedText = "";
 
-            for (var i = 0; i < text1Value.length; i++) {
-                var char = text1Value.charAt(i);
-                /*var ASCIIcode = char.charCodeAt(0);
+        for (var i = 0; i < text1Value.length; i++) {
+          var char = text1Value.charAt(i);
+          /*var ASCIIcode = char.charCodeAt(0);
                 if(97 <= ASCIIcode && ASCIIcode <= 122) {
                     char = String.fromCharCode(ASCIIcode - 32);
                 }
@@ -37,25 +44,25 @@
                     char = String.fromCharCode(ASCIIcode + 32);
                 }
                 transformText += char;*/
-                if (char === char.toUpperCase()) {
-                    transformedText += char.toLowerCase();
-                } else {
-                    transformedText += char.toUpperCase();
-                }
-            }
-
-            text2Element.value = transformedText;
+          if (char === char.toUpperCase()) {
+            transformedText += char.toLowerCase();
+          } else {
+            transformedText += char.toUpperCase();
+          }
         }
 
-        function clearText() {
-            var text1Element = document.getElementById('text1');
-            text1Element.value = '';
-        }
+        text2Element.value = transformedText;
+      }
 
-        window.onload = function () {
-            var text1Element = document.getElementById('text1');
-            text1Element.focus();
-        };
+      function clearText() {
+        var text1Element = document.getElementById("text1");
+        text1Element.value = "";
+      }
+
+      window.onload = function () {
+        var text1Element = document.getElementById("text1");
+        text1Element.focus();
+      };
     </script>
-</body>
+  </body>
 </html>

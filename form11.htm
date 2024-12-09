@@ -1,69 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đăng Nhập</title>
-
-</head>
-<body>
+  </head>
+  <body>
     <form id="loginForm">
-        <table align="center">
-            <tr>
-                <th colspan="2"> LOGIN </th>
-            </tr>
-            <tr>
-                <td> <label for="username">Username</label> </td>
-                <td> <input type="text" id="username" name="username"> </td>
-            </tr>
-            <tr>
-                <td> <label for="password">Password</label> </td>
-                <td> <input type="password" id="password" name="password"> </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <button type="button" onclick="resetFields()">Reset</button>
-                    <button type="button" onclick="login()">OK</button>
-                </td>
-            </tr>
-        </table>
+      <table align="center">
+        <tr>
+          <th colspan="2">LOGIN</th>
+        </tr>
+        <tr>
+          <td><label for="username">Username</label></td>
+          <td><input type="text" id="username" name="username" /></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td><input type="password" id="password" name="password" /></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <button type="button" onclick="resetFields()">Reset</button>
+            <button type="button" onclick="login()">OK</button>
+          </td>
+        </tr>
+      </table>
     </form>
 
     <p align="center" id="loginMessage" class="error"></p>
 
     <script>
-        function resetFields() {
-            document.getElementById("username").value = "";
-            document.getElementById("password").value = "";
-            document.getElementById("loginMessage").innerText = "";
+      function resetFields() {
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        document.getElementById("loginMessage").innerText = "";
+      }
+
+      function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var loginMessage = document.getElementById("loginMessage");
+
+        if (username === "" && password === "") {
+          loginMessage.innerText = "Vui lòng nhập username và password.";
+          loginMessage.style.color = "red";
+          return;
         }
 
-        function login() {
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            var loginMessage = document.getElementById("loginMessage");
-
-            if (username === "" && password === "") {
-                loginMessage.innerText = "Vui lòng nhập username và password.";
-                loginMessage.style.color = "red";
-                return;
-            }
-
-            if (username === "") {
-                loginMessage.innerText = "Vui lòng nhập username.";
-                loginMessage.style.color = "red";
-                return;
-            }
-
-            if (password === "") {
-                loginMessage.innerText = "Vui lòng nhập password.";
-                loginMessage.style.color = "red";
-                return;
-            }
-
-            loginMessage.innerText = "Đăng nhập thành công!";
-            loginMessage.style.color = "green";
+        if (username === "") {
+          loginMessage.innerText = "Vui lòng nhập username.";
+          loginMessage.style.color = "red";
+          return;
         }
+
+        if (password === "") {
+          loginMessage.innerText = "Vui lòng nhập password.";
+          loginMessage.style.color = "red";
+          return;
+        }
+
+        loginMessage.innerText = "Đăng nhập thành công!";
+        loginMessage.style.color = "green";
+      }
     </script>
-</body>
+  </body>
 </html>
